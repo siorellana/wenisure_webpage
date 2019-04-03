@@ -5,12 +5,12 @@
 export const environment = {
   production: false,
     firebaseConfig: {
-        apiKey: "AIzaSyC15_yQQJb61YnImNk3fa7xFVoHIDgv7bo",
-        authDomain: "iscav-dev.firebaseapp.com",
-        databaseURL: "https://iscav-dev.firebaseio.com",
-        projectId: "iscav-dev",
-        storageBucket: "iscav-dev.appspot.com",
-        messagingSenderId: "735639243228"
+      apiKey: "AIzaSyCeeNrCzs8kicbtB-gapSyimtd_EHfkTkA",
+      authDomain: "wenisure-dev.firebaseapp.com",
+      databaseURL: "https://wenisure-dev.firebaseio.com",
+      projectId: "wenisure-dev",
+      storageBucket: "wenisure-dev.appspot.com",
+      messagingSenderId: "359203017169"
     }
 };
 

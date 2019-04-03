@@ -9,9 +9,9 @@
 <div class="row">
   <div class="col-md-10 mx-auto mt-2">
     <div class="card">
-      <div class="card-header">Editar Anuncio</div>
+      <div class="card-header">Nuevo Anuncio</div>
       <div class="card-body">
-        <form #formModificar="ngForm" (ngSubmit)="onModificarAnuncio(formModificar)">
+        <form #formGuardar="ngForm" (ngSubmit)="onGuardarAnuncio(formGuardar)">
           <div class="form-group">
             <label for="titulo">Titulo</label>
             <input type="text" class="form-control" 
@@ -29,32 +29,23 @@
           <div class="form-group">
             <label for="contacto">Contacto</label>
             <textarea type="text" class="form-control" 
-            id="contacto" name="ingredientes"
+            id="contacto" name="contacto"
             [(ngModel)]="anuncio.contacto"
             ></textarea>
-          </div>
-          <!--<div class="form-group">
-            <label for="preparacion">Preparación</label>
-            <textarea type="text" class="form-control" 
-            id="preparacion" name="preparacion"
-            [(ngModel)]="receta.preparacion"
-            ></textarea>
-          </div>-->
-   
+          </div>   
           <div class="form-group">
             <label for="tags">Tags</label>
-            <span class="badge badge-pill badge-dark" *ngFor="let item of anuncio.tags">{{item}}</span>
             <select multiple="" name="tags" id="tags" 
             class="form-control"  
             [(ngModel)]="anuncio.tags">
-            <option>Vender</option>
-            <option>Comprar</option>
-            <option>Info</option>
-            <option>Anuncio</option>
-            <option>Actividad</option>
+              <option>Vender</option>
+              <option>Comprar</option>
+              <option>Info</option>
+              <option>Anuncio</option>
+              <option>Actividad</option>
             </select>
           </div>
-          <input type="submit" value="Modificar" class="btn btn-primary btn-block">
+          <input type="submit" value="Guardar" class="btn btn-primary btn-block">
         </form>
       </div>
     </div>

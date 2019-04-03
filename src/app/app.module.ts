@@ -22,6 +22,7 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AuthService } from './services/auth.service';
 import { AuthGuard} from './guards/auth.guard';
 import { ResidenteService } from './services/residente.service';
+import { AnuncioService } from './services/anuncio.service';
 
 import { environment } from '../environments/environment';
 import { AboutComponent } from './componentes/about/about.component';
@@ -30,6 +31,8 @@ import { NuevoResidenteComponent } from './componentes/nuevo-residente/nuevo-res
 import { EditComponent } from './componentes/edit/edit.component';
 import { DetailsComponent} from './componentes/details/details.component';
 import { FooterComponent } from './componentes/footer/footer.component';
+import { NuevoAnuncioComponent } from './componentes/nuevo-anuncio/nuevo-anuncio.component';
+import { Privado2Component } from './componentes/privado2/privado2.component';
 
 
 @NgModule({
@@ -46,7 +49,9 @@ import { FooterComponent } from './componentes/footer/footer.component';
     NuevoResidenteComponent,
     EditComponent,
     DetailsComponent,
-    FooterComponent
+    FooterComponent,
+    NuevoAnuncioComponent,
+    Privado2Component
   ],
   imports: [
     BrowserModule,
@@ -59,7 +64,7 @@ import { FooterComponent } from './componentes/footer/footer.component';
       FormsModule,
       FlashMessagesModule
   ],
-  providers: [AuthService, AuthGuard, FlashMessagesService, ResidenteService],
+  providers: [AuthService, AuthGuard, FlashMessagesService, ResidenteService, AnuncioService],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

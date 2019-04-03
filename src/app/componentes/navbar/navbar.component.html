@@ -10,17 +10,18 @@
         <a class="nav-link" href="#" *ngIf="!isLogin" routerLink="/">Inicio <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-      <a class="nav-link" href="#" *ngIf="isLogin" routerLink="/privado">Dashboard <span class="sr-only">(current)</span></a>
+      <a class="nav-link" href="#" *ngIf="isLogin" routerLink="/admin">Dashboard <span class="sr-only">(current)</span></a>
     </li>
+    
 
-        <li class="nav-item dropdown show" *ngIf="isLogin">
+       <!-- <li class="nav-item dropdown show" *ngIf="isLogin">
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="true">Residentes</a>
           <div class="dropdown-menu show" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 40px, 0px); top: 0px; left: 0px; will-change: transform;">
             <a class="dropdown-item" routerLink="/nuevo">Nuevo Residente</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">Ver Residentes</a>
           </div>
-        </li>
+        </li>-->
 <!--
     <li class="nav-item dropdown" *ngIf="isLogin">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Residentes</a>
@@ -36,7 +37,7 @@
         <a class="nav-link" routerLink="/nuevo">Nuevo Residente</a>
       </li>-->
       <li class="nav-item" *ngIf="isLogin">
-        <a class="nav-link" href="#" routerLink="/register">Registrar Admin</a>
+        <a class="nav-link" href="#" routerLink="/register">Registrar Usuarios</a>
       </li>
       <!-- <li class="nav-item">
          <a class="nav-link" routerLink="/about">Acerca de</a>
@@ -50,6 +51,9 @@
        <li class="nav-item">
          <a class="nav-link" href="#">About</a>
        </li>-->
+       <li class="nav-item">
+        <a class="nav-link" href="#" *ngIf="isLogin" routerLink="/privado">Reportes <span class="sr-only">(current)</span></a>
+      </li>
     </ul>
 
     <ul class="navbar-nav mx-auto">

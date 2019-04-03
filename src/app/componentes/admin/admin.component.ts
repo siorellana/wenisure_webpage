@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AnuncioService } from '../../services/anuncio.service';
+import { AnuncioInterface } from '../../models/anuncio';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-admin',
@@ -6,10 +9,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin.component.scss']
 })
 export class AdminComponent implements OnInit {
+  anuncios: AnuncioInterface[];
 
-  constructor() { }
+  constructor(
+    private anuncioService: AnuncioService
+  ) { }
 
   ngOnInit() {
+    this.AllAnuncios();
+  }
+  AllAnuncios(){
+    this.anuncioService.getAllAnuncios().subscribe(anuncios => this.anuncios = anuncios)
   }
 
 }

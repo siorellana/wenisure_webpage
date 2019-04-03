@@ -11,17 +11,21 @@ import { NotFoundPageComponent } from './componentes/not-found-page/not-found-pa
 import { NuevoResidenteComponent } from './componentes/nuevo-residente/nuevo-residente.component';
 import { AboutComponent } from './componentes/about/about.component';
 import { DetailsComponent} from './componentes/details/details.component';
+import { NuevoAnuncioComponent} from './componentes/nuevo-anuncio/nuevo-anuncio.component';
+import {Privado2Component} from './componentes/privado2/privado2.component';
 
 const routes: Routes = [
     {path: '', component: HomePageComponent },
     {path: 'login', component: LoginPageComponent},
     {path: 'register', component: RegisterPageComponent},
     {path: 'privado', component: PrivadoPageComponent, canActivate: [AuthGuard]},
+    {path: 'privado2', component: Privado2Component, canActivate: [AuthGuard]},
     {path: 'admin', component: AdminComponent, canActivate: [AuthGuard]},
-    {path: 'edit', component: EditComponent, canActivate: [AuthGuard]},
+    {path: 'edit/:id', component: EditComponent, canActivate: [AuthGuard]},
     {path: 'nuevo', component: NuevoResidenteComponent, canActivate: [AuthGuard]},
     {path: 'about', component: AboutComponent},
-    {path: 'details', component: DetailsComponent, canActivate: [AuthGuard] },
+    {path: 'details/:id', component: DetailsComponent, canActivate: [AuthGuard] },
+    {path: 'anuncio', component: NuevoAnuncioComponent,canActivate: [AuthGuard]},
     {path: '**', component: NotFoundPageComponent},
 ];
 
