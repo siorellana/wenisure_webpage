@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="col-md-6"></div>
+  <a href="" class="btn btn-link">
+    <i class="fa fa-arrow-circle-o-left"></i>Atrás
+  </a>
+  <div class="col-md-6"></div>
+</div>
+<div class="row">
+  <div class="col-md-10 mx-auto mt-2">
+    <div class="card">
+    <div class="card-header">Nuevo Residente</div>
+      <div class="card-body">
+      <form #formGuardar="ngForm" (ngSubmit)="onGuardarResidente(formGuardar)">
+          <div class="form-group">
+              <label for="titulo">Id</label>
+              <input type="text" class="form-control" id="id" name="id" [(ngModel)]="residente.Id">
+            </div>
+        <div class="form-group">
+          <label for="titulo">Nombre</label>
+          <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="residente.Nombre">
+        </div>
+        <div class="form-group">
+          <label for="departamento">Departamento</label>
+          <input type="text" class="form-control" id="departamento" name="departamento" [(ngModel)]="residente.Departamento">
+        </div>
+        <div class="form-group">
+          <label for="telefono">Telefono</label>
+          <input type="text" class="form-control" id="telefono" name="telefono" [(ngModel)]="residente.Telefono">
+        </div>
+        <div class="form-group">
+            <label for="telefono">E-Mail</label>
+            <input type="text" class="form-control" id="mail" name="mail" [(ngModel)]="residente.Mail">
+        </div>
+        <div class="form-group">
+          <label for="tipoResidente">Tipo de Residente</label>
+          <select name="tipoResidente" id="tipoResidente" class="form-control" [(ngModel)]="residente.TipoResidente">
+          <option>Propietario</option>
+          <option>Arrendatario</option>
+          </select>
+        </div>
+        <input type="submit" value="Guardar" class="btn btn-primary btn-block">
+      </form>
+      </div>
+    </div>
+  </div>
+</div>

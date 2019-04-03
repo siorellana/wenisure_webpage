@@ -1,0 +1,35 @@
+git status
+  658  git remote -v
+  659  git push -u github master
+  660  git push -u origin master
+  661  git pull
+  662  git status
+  663  git push
+  664  git push --set-upstream origin master
+  665  echo "# loginapp" >> README.md
+  666  git init
+  667  git remote add origin https://github.com/siorellana/loginapp.git
+  668  ls
+  669  git push -u origin master
+  670  cat README.md
+  671  rm README.md
+  672  ls
+  673  git remote add origin https://github.com/siorellana/loginapp.git
+  674  git remote set-url origin git@github.com:siorellana/loginapp.git
+  675  git push origin master
+  676  git remote rm origin
+  677  git push origin master
+  678  git remote set-url origin git@github.com:siorellana/loginapp.git
+  679  git remote -v
+  680  git push
+  681  git remote add https://github.com/siorellana/loginapp.git
+  682  history
+  683  git remote add origin https://github.com/siorellana/loginapp.git
+  684  git remote -v
+  685  git push
+  686  git push -u origin master
+  687  git status
+  688  git add .
+  689  git status
+  690  git commit -am "Se agregaron alertas"
+  691  git push
