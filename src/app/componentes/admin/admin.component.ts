@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { AnuncioService } from '../../services/anuncio.service';
-import { AnuncioInterface } from '../../models/anuncio';
+import { NotificacionesService } from '../../services/notificaciones.service';
+import { NotificacionesInterface } from '../../models/notificaciones';
 import { Observable } from 'rxjs/Observable';
+
 
 @Component({
   selector: 'app-admin',
@@ -9,17 +10,17 @@ import { Observable } from 'rxjs/Observable';
   styleUrls: ['./admin.component.scss']
 })
 export class AdminComponent implements OnInit {
-  anuncios: AnuncioInterface[];
+  notificaciones: NotificacionesInterface[];
 
   constructor(
-    private anuncioService: AnuncioService
+    private notificacionesService: NotificacionesService
   ) { }
 
   ngOnInit() {
-    this.AllAnuncios();
+    this.AllNotificaciones();
   }
-  AllAnuncios(){
-    this.anuncioService.getAllAnuncios().subscribe(anuncios => this.anuncios = anuncios)
+  AllNotificaciones(){
+    this.notificacionesService.getNotificaciones().subscribe(notificaciones => this.notificaciones = notificaciones)
   }
 
 }
