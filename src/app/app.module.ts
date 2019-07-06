@@ -33,6 +33,7 @@ import { DetailsComponent} from './componentes/details/details.component';
 import { FooterComponent } from './componentes/footer/footer.component';
 import { NuevoAnuncioComponent } from './componentes/nuevo-anuncio/nuevo-anuncio.component';
 import { Privado2Component } from './componentes/privado2/privado2.component';
+import { NotificacionesService } from './services/notificaciones.service';
 
 
 @NgModule({
@@ -64,7 +65,7 @@ import { Privado2Component } from './componentes/privado2/privado2.component';
       FormsModule,
       FlashMessagesModule
   ],
-  providers: [AuthService, AuthGuard, FlashMessagesService, ResidenteService, AnuncioService],
+  providers: [AuthService, AuthGuard, FlashMessagesService, ResidenteService, AnuncioService, NotificacionesService],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
