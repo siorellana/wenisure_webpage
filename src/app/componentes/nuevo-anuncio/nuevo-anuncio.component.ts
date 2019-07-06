@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { AnuncioInterface} from '../../models/anuncio';
 import { AuthService } from '../../services/auth.service';
-import { AnuncioService } from '../../services/anuncio.service';
 import { Router } from '@angular/router';
 import { FlashMessagesService} from 'angular2-flash-messages';
+import { NotificacionesService } from '../../services/notificaciones.service';
+import { NotificacionesInterface } from '../../models/notificaciones';
+import { NgForm } from '@angular/forms/src/directives/ng_form';
 
 
 @Component({
@@ -11,36 +12,33 @@ import { FlashMessagesService} from 'angular2-flash-messages';
   templateUrl: './nuevo-anuncio.component.html',
   styleUrls: ['./nuevo-anuncio.component.scss']
 })
-export class NuevoAnuncioComponent implements OnInit {
-  anuncio: AnuncioInterface = {
-  id: '',
-  titulo: '',
-  descripcion: '',
-  contacto: '',
-  tags: '',
-  fechaPublicacion:'',
-  userId:'',
-  userNombre:''
-  }
+
+export class NuevaNotificacionComponent implements OnInit{
+  notificacion:NotificacionesInterface = {
+    asunto:'',
+    descripcion: '',
+    formador: '',
+    nivel: '',
+    tipo: '',
+    fecha: '',
+  };
 
   constructor(
     private authService: AuthService,
-    private anuncioService: AnuncioService,
+    private notificacionService: NotificacionesService,
     private router: Router,
     public flashMensaje: FlashMessagesService
   ) { }
 
   ngOnInit() {
   }
-  onGuardarAnuncio({ value }: {value: AnuncioInterface}) {
-    value.fechaPublicacion = (new Date()).getTime();
-    this.authService.getAuth().subscribe( user => {
-      value.userNombre = user.displayName;
-    });
-    this.anuncioService.addAnuncio(value);
-    this.router.navigate(['/']);
-  }
 
+  onGuardarNotificacion(myForm: NgForm) {
+    const fechaNow = Date.now();
+    this.notificacion.fecha = fechaNow;
+    this.notificacionService.addAnuncio(this.notificacion);
+    this.router.navigate(['/admin']);
+  }
 }
 
   

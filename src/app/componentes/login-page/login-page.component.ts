@@ -52,7 +52,7 @@ public password: string;
       .then((res) => {
           this.flashMensaje.show('Ingreso correcto.',
               {cssClass: 'alert-success', timeout: 4000});
-        this.router.navigate(['/privado']);
+        this.router.navigate(['/admin']);
         }).catch((err) => {
       this.flashMensaje.show(err.message,
           {cssClass: 'alert-danger', timeout: 4000});

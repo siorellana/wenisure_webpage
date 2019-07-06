@@ -3,6 +3,7 @@ import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument}
 import { NotificacionesInterface } from '../models/notificaciones';
 import { Observable, from } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { ConsoleReporter } from 'jasmine';
 
 
 @Injectable({
@@ -13,15 +14,26 @@ export class NotificacionesService {
   notificaciones: Observable<NotificacionesInterface[]>;
   notificacionesDoc: AngularFirestoreDocument<NotificacionesInterface>;
 
-
-
   constructor(public afs: AngularFirestore) {
 
     this.notificaciones = afs.collection('notificaciones').valueChanges();
 
    }
 
-   getNotificaciones(){
+
+   getAnuncios(){
      return this.notificaciones;
    }
+
+   addAnuncio()  {
+    console.log('Holi');
+  }
+
+  delAnuncio(){
+
+  }
+
+  updAnuncio(){
+
+  }
 }

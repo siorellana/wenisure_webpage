@@ -31,7 +31,7 @@ import { NuevoResidenteComponent } from './componentes/nuevo-residente/nuevo-res
 import { EditComponent } from './componentes/edit/edit.component';
 import { DetailsComponent} from './componentes/details/details.component';
 import { FooterComponent } from './componentes/footer/footer.component';
-import { NuevoAnuncioComponent } from './componentes/nuevo-anuncio/nuevo-anuncio.component';
+import { NuevaNotificacionComponent } from './componentes/nuevo-anuncio/nuevo-anuncio.component';
 import { Privado2Component } from './componentes/privado2/privado2.component';
 import { NotificacionesService } from './services/notificaciones.service';
 
@@ -51,7 +51,7 @@ import { NotificacionesService } from './services/notificaciones.service';
     EditComponent,
     DetailsComponent,
     FooterComponent,
-    NuevoAnuncioComponent,
+    NuevaNotificacionComponent,
     Privado2Component
   ],
   imports: [
