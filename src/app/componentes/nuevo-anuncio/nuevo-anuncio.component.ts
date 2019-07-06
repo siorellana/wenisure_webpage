@@ -14,7 +14,7 @@ import { NgForm } from '@angular/forms/src/directives/ng_form';
 })
 
 export class NuevaNotificacionComponent implements OnInit{
-  notificacion:NotificacionesInterface = {
+  notificacion: NotificacionesInterface = {
     asunto:'',
     descripcion: '',
     formador: '',
@@ -37,6 +37,8 @@ export class NuevaNotificacionComponent implements OnInit{
     const fechaNow = Date.now();
     this.notificacion.fecha = fechaNow;
     this.notificacionService.addAnuncio(this.notificacion);
+    
+    
     this.router.navigate(['/admin']);
   }
 }

@@ -20,7 +20,7 @@ export class AdminComponent implements OnInit {
     this.AllNotificaciones();
   }
   AllNotificaciones(){
-    this.notificacionesService.getNotificaciones().subscribe(notificaciones => this.notificaciones = notificaciones)
+    this.notificacionesService.getAnuncios().subscribe(notificaciones => this.notificaciones = notificaciones)
   }
 
 }
