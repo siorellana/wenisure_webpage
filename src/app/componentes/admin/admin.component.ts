@@ -11,6 +11,8 @@ import { Observable } from 'rxjs/Observable';
 })
 export class AdminComponent implements OnInit {
   notificaciones: NotificacionesInterface[];
+  editState: boolean = false;
+  notificacionToEdit: NotificacionesInterface;
 
   constructor(
     private notificacionesService: NotificacionesService
@@ -21,6 +23,16 @@ export class AdminComponent implements OnInit {
   }
   AllNotificaciones(){
     this.notificacionesService.getAnuncios().subscribe(notificaciones => this.notificaciones = notificaciones)
+  }
+
+  editNotificacion(event, notificacion:NotificacionesInterface){
+    this.editState = true;
+    this.notificacionToEdit = notificacion;
+  }
+
+  clearState(){
+    this.editState = false;
+    this.notificacionToEdit = null;
   }
 
 }
