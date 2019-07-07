@@ -15,7 +15,7 @@ export class NotificacionesService {
   constructor(public afs: AngularFirestore) {
 
     //this.notificaciones = afs.collection('notificaciones').valueChanges();
-    this.notificacionesCollection = afs.collection<NotificacionesInterface>('notificaciones');
+    this.notificacionesCollection = afs.collection<NotificacionesInterface>('notificaciones', ref => ref.orderBy('fecha', 'desc'));
     this.notificaciones = this.notificacionesCollection.snapshotChanges().pipe(
       map(actions => actions.map(a=>{
         const data = a.payload.doc.data() as NotificacionesInterface;
@@ -25,21 +25,22 @@ export class NotificacionesService {
     );
    }
 
-
-   getAnuncios() {
+  getAnuncios() {
      return this.notificaciones;
-   }
+  }
 
-   addAnuncio( anuncio: NotificacionesInterface) {
-    console.log('Holi');
+  addAnuncio(anuncio: NotificacionesInterface) {
     this.notificacionesCollection.add(anuncio);
   }
 
-  delAnuncio() {
-
+  delAnuncio(notificacion: NotificacionesInterface) {
+    this.notificacionesDoc = this.afs.doc(`notificaciones/${notificacion.id}`);
+    this.notificacionesDoc.delete();
   }
 
-  updAnuncio() {
-
+  updAnuncio(notificacion: NotificacionesInterface) {
+    this.notificacionesDoc = this.afs.doc(`notificaciones/${notificacion.id}`);
+    this.notificacionesDoc.update(notificacion);
   }
+
 }

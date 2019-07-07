@@ -34,13 +34,17 @@ export class NuevaNotificacionComponent implements OnInit{
   }
 
   onGuardarNotificacion(myForm: NgForm) {
-    const fechaNow = Date.now();
-    this.notificacion.fecha = fechaNow;
-    this.notificacionService.addAnuncio(this.notificacion);
-    
-    
-    this.router.navigate(['/admin']);
+    if (myForm.valid == true) {
+      const fechaNow = Date.now();
+      this.notificacion.fecha = fechaNow;
+      this.notificacionService.addAnuncio(this.notificacion);
+      this.router.navigate(['/admin']);
+    }else{
+
+    }
+
   }
+
 }
 
   

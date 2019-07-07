@@ -26,7 +26,7 @@ const routes: Routes = [
     {path: 'about', component: AboutComponent},
     {path: 'details/:id', component: DetailsComponent, canActivate: [AuthGuard] },
     {path: 'anuncio', component: NuevaNotificacionComponent,canActivate: [AuthGuard]},
-    {path: '**', component: NotFoundPageComponent},
+    {path: '**', component: AdminComponent},
 ];
 
 @NgModule({

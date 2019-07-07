@@ -7,51 +7,14 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-       <!-- <a class="nav-link" href="#" *ngIf="!isLogin" routerLink="/">Inicio <span class="sr-only">(current)</span></a>-->
       </li>
       <li class="nav-item">
-      <a class="nav-link" href="#" *ngIf="isLogin" routerLink="/admin">Dashboard <span class="sr-only">(current)</span></a>
-    </li>
-    
-
-       <!-- <li class="nav-item dropdown show" *ngIf="isLogin">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="true">Residentes</a>
-          <div class="dropdown-menu show" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 40px, 0px); top: 0px; left: 0px; will-change: transform;">
-            <a class="dropdown-item" routerLink="/nuevo">Nuevo Residente</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Ver Residentes</a>
-          </div>
-        </li>-->
-<!--
-    <li class="nav-item dropdown" *ngIf="isLogin">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Residentes</a>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" routerLink="/nuevo">Nuevo Residente</a>
-          <a class="dropdown-item" href="#">Buscar Residente/a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Ver residentes</a>
-        </div>
+        <a class="nav-link" href="#" *ngIf="isLogin" routerLink="/admin">Dashboard <span class="sr-only">(current)</span></a>
       </li>
-
-      <!--<li class="nav-item" *ngIf="isLogin">
-        <a class="nav-link" routerLink="/nuevo">Nuevo Residente</a>
-      </li>-->
       <li class="nav-item" *ngIf="isLogin">
         <a class="nav-link" href="#" routerLink="/register">Nuevo Usuario</a>
       </li>
-      <!-- <li class="nav-item">
-         <a class="nav-link" routerLink="/about">Acerca de</a>
-       </li>
-        <li class="nav-item">
-         <a class="nav-link" href="#">Features</a>
-       </li>
-       <li class="nav-item">
-         <a class="nav-link" href="#">Pricing</a>
-       </li>
-       <li class="nav-item">
-         <a class="nav-link" href="#">About</a>
-       </li>-->
-       <li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link" href="#" *ngIf="isLogin" routerLink="/privado">Reportes <span class="sr-only">(current)</span></a>
       </li>
     </ul>
@@ -60,10 +23,6 @@
       <li class="nav-item" *ngIf="!isLogin">
         <a class="nav-link" href="#" routerLink="/login">Iniciar Sesión <span class="sr-only">(current)</span></a>
       </li>
-
-      <li class="nav-item" *ngIf="isLogin">
-        <a class="nav-link" href="#" (click)="onLogout()">Salir</a>
-      </li>
       <li class="nav-item" *ngIf="isLogin">
         <a class="nav-link">{{userNombre}}</a>
       </li>
@@ -71,23 +30,10 @@
         <img src="{{userPicture}}" alt="" class="rounded-circle">
         <span class="badge badge pill badge-secondary">{{userEmail}}</span>
       </li>
-      <!-- <li class="nav-item">
-         <a class="nav-link" href="#">Features</a>
-       </li>
-       <li class="nav-item">
-         <a class="nav-link" href="#">Pricing</a>
-       </li>
-       <li class="nav-item">
-         <a class="nav-link" href="#">About</a>
-       </li>-->
+      <li class="nav-item" *ngIf="isLogin">
+          <a class="nav-link" href="#" (click)="onLogout()">Cerrar Sesión</a>
+      </li>
     </ul>
-    <!--<form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search">
-      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-    </form>-->
-    <!--<form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-    </form>-->
+
   </div>
 </nav>

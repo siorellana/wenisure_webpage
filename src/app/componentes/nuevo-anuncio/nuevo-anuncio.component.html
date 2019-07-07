@@ -3,39 +3,59 @@
   <span class="card-tittle" style="font-size: 2rem">NUEVO ANUNCIO</span>
     <div class="row">
     <form (ngSubmit)="onGuardarNotificacion(formNew)" #formNew="ngForm" class="col s12"> 
+      
       <div class="row">
-
         <div class="input-field col s6">
-          <input [(ngModel)]="notificacion.asunto" #asunto="ngModel" type="text" name="asunto" id="asunto" placeholder="">
+          <input [(ngModel)]="notificacion.asunto" #asunto="ngModel" type="text" name="asunto" id="asunto" placeholder="" minlength="6" maxlength="40" required>
           <label>Asunto</label>
+          <div *ngIf="asunto.touched && !asunto.valid">
+            <div *ngIf="asunto.errors.required">Asunto es requerido</div>
+            <div *ngIf="asunto.errors.minlength">Debe contener al menos {{asunto.errors.minlength.requiredLength}} caracteres</div>
+          </div>
         </div>
-
         <div class="input-field col s6">
-          <input [(ngModel)]="notificacion.descripcion" #descripcion="ngModel" type="text" name="descripcion" id="descripcion" placeholder="">
+          <input [(ngModel)]="notificacion.descripcion" #descripcion="ngModel" type="text" name="descripcion" id="descripcion" placeholder="" minlength="8" maxlength="999" required>
           <label>Descripción</label>
+          <div *ngIf="descripcion.touched && !descripcion.valid">
+            <div *ngIf="descripcion.errors.required">Es necesario añadir una descripción</div>
+            <div *ngIf="descripcion.errors.minlength">Debe contener al menos {{descripcion.errors.minlength.requiredLength}} caracteres</div>
+          </div>
         </div>
       </div>
+
       <div class="row">
-
         <div class="input-field col s6">
-          <input [(ngModel)]="notificacion.formador" #formador="ngModel" type="text" name="formador" id="formador" placeholder="">
+          <input [(ngModel)]="notificacion.formador" #formador="ngModel" type="text" name="formador" id="formador" placeholder="" minlength="2" maxlength="40" required>
           <label for="formador">Quién anuncia?</label>
+          <div *ngIf="formador.touched && !formador.valid">
+            <div *ngIf="formador.errors.required">Debe ingresar su nombre</div>
+            <div *ngIf="formador.errors.minlength">Debe contener al menos {{formador.errors.minlength.requiredLength}} caracteres</div>
+          </div>
         </div>
-
         <div class="input-field col s6">
-          <input [(ngModel)]="notificacion.nivel" #nivel="ngModel" type="text" name="nivel" id="nivel" placeholder="">
+          <input [(ngModel)]="notificacion.nivel" #nivel="ngModel" type="text" name="nivel" id="nivel" placeholder="" minlength="2" maxlength="40" pattern="Sala Cuna|Jardin Infantil|Todos" required>
           <label>A quien va dirigido?</label>
+          <div *ngIf="nivel.touched && !nivel.valid">
+            <div *ngIf="nivel.errors.required">Debe indicar a qué nivel va dirigido</div>
+            <div *ngIf="nivel.errors.minlength">Debe contener al menos {{nivel.errors.minlength.requiredLength}} caracteres</div>
+            <div *ngIf="nivel.errors.pattern">Puede ser: Sala Cuna, Jardin Infantil o Todos</div>
+          </div>
         </div>
-
         <div class="input-field col s6">
-          <input [(ngModel)]="notificacion.tipo" #tipo="ngModel" type="text" name="tipo" id="tipo" placeholder="">
+          <input [(ngModel)]="notificacion.tipo" #tipo="ngModel" type="text" name="tipo" id="tipo" placeholder="" minlength="5" maxlength="40" pattern="Anuncio|Informativo|Urgente" required>
           <label>Tipo de anuncio</label>
+          <div *ngIf="tipo.touched && !tipo.valid">
+            <div *ngIf="tipo.errors.required">Ingrese el tipo de anuncio</div>
+            <div *ngIf="tipo.errors.minlength">Debe contener al menos {{tipo.errors.minlength.requiredLength}} caracteres</div>
+            <div *ngIf="tipo.errors.pattern">Puede ser: Anuncio, Información o Urgente</div>
+          </div>
         </div>
-        
       </div>
+
       <button routerLink="/admin" class="btn waves-effect waves-light red">
         <span style="color:#fff">Atrás</span> 
       </button>
+
       <button type="submit" class="btn waves-effect waves-light green right">
         <span style="color:#fff">Crear Anuncio</span> 
       </button>
