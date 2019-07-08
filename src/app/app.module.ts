@@ -35,6 +35,8 @@ import { NuevaNotificacionComponent } from './componentes/nuevo-anuncio/nuevo-an
 import { Privado2Component } from './componentes/privado2/privado2.component';
 import { NotificacionesService } from './services/notificaciones.service';
 
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+
 
 @NgModule({
   declarations: [
@@ -65,7 +67,7 @@ import { NotificacionesService } from './services/notificaciones.service';
       FormsModule,
       FlashMessagesModule
   ],
-  providers: [AuthService, AuthGuard, FlashMessagesService, ResidenteService, AnuncioService, NotificacionesService],
+  providers: [AuthService, AuthGuard, FlashMessagesService, ResidenteService, AnuncioService, NotificacionesService, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
