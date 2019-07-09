@@ -33,21 +33,21 @@
           </div>
         </div>
         <div class="input-field col s6">
-          <input [(ngModel)]="notificacion.nivel" #nivel="ngModel" type="text" name="nivel" id="nivel" placeholder="" minlength="2" maxlength="40" pattern="Sala Cuna|Jardin Infantil|Todos" required>
+          <input [(ngModel)]="notificacion.nivel" #nivel="ngModel" type="text" name="nivel" id="nivel" placeholder="" minlength="2" maxlength="40" required>
           <label>A quien va dirigido?</label>
           <div *ngIf="nivel.touched && !nivel.valid">
             <div *ngIf="nivel.errors.required">Debe indicar a qué nivel va dirigido</div>
             <div *ngIf="nivel.errors.minlength">Debe contener al menos {{nivel.errors.minlength.requiredLength}} caracteres</div>
-            <div *ngIf="nivel.errors.pattern">Puede ser: Sala Cuna, Jardin Infantil o Todos</div>
+           <!-- <div *ngIf="nivel.errors.pattern">Puede ser: Sala Cuna, Jardin Infantil o Todos</div>-->
           </div>
         </div>
         <div class="input-field col s6">
-          <input [(ngModel)]="notificacion.tipo" #tipo="ngModel" type="text" name="tipo" id="tipo" placeholder="" minlength="5" maxlength="40" pattern="Anuncio|Informativo|Urgente" required>
+          <input [(ngModel)]="notificacion.tipo" #tipo="ngModel" type="text" name="tipo" id="tipo" placeholder="" minlength="5" maxlength="40" required>
           <label>Tipo de anuncio</label>
           <div *ngIf="tipo.touched && !tipo.valid">
             <div *ngIf="tipo.errors.required">Ingrese el tipo de anuncio</div>
             <div *ngIf="tipo.errors.minlength">Debe contener al menos {{tipo.errors.minlength.requiredLength}} caracteres</div>
-            <div *ngIf="tipo.errors.pattern">Puede ser: Anuncio, Información o Urgente</div>
+            <!--<div *ngIf="tipo.errors.pattern">Puede ser: Anuncio, Información o Urgente</div>-->
           </div>
         </div>
       </div>
